@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
+import Link from "next/link"
 
 import {
   BookOpen,
@@ -15,7 +15,7 @@ import {
   X,
 } from "lucide-react";
 
-const API_URL = "http://localhost:5000/api/books";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/books`;
 
 const initialForm = {
   title: "",
@@ -36,7 +36,7 @@ function BookCover({ book }) {
   return (
     <div className="flex h-52 items-center justify-center overflow-hidden bg-emerald-50">
       {imageUrl && !imageError ? (
-        <img
+        <imge
           src={imageUrl}
           alt={book.title || "Book cover"}
           onError={() => setImageError(true)}

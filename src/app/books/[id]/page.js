@@ -7,8 +7,9 @@ import { ArrowLeft, BookOpen, Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { useSession } from "@/lib/auth-client";
 
-const API_URL = "http://localhost:5000/api/books";
-const BORROW_API_URL = "http://localhost:5000/api/borrows";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/books`;
+
+const BORROW_API_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/borrows`;
 
 // Get JWT Authorization Header
 const getAuthHeaders = () => {

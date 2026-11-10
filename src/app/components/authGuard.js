@@ -8,7 +8,7 @@ import { useSession } from "@/lib/auth-client";
 // Login na korei jei page gulo dekha jabe
 const PUBLIC_PATHS = ["/", "/books", "/login", "/register"];
 
-const TOKEN_URL = "http://localhost:5000/api/auth/token";
+const TOKEN_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/auth/token`;
 
 export default function AuthGuard({ children }) {
   const pathname = usePathname();

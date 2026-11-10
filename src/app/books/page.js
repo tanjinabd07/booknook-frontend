@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search, BookOpen, RefreshCw } from "lucide-react";
 
-const API_URL = "http://localhost:5000/api/books";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/books`;
 
 export default function BooksPage() {
   const [books, setBooks] = useState([]);

@@ -50,7 +50,7 @@ export default function LoginPage() {
 
       // Generate JWT from Backend
       const tokenResponse = await fetch(
-        "http://localhost:5000/api/auth/token",
+        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/auth/token`,
         {
           method: "POST",
           credentials: "include",
