@@ -48,14 +48,10 @@ export default function LoginPage() {
         return;
       }
 
-      // Generate JWT from Backend
-      const tokenResponse = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/auth/token`,
-        {
-          method: "POST",
-          credentials: "include",
-        },
-      );
+      // Generate JWT (Next.js-er nijer /api/token theke)
+      const tokenResponse = await fetch("/api/token", {
+        method: "POST",
+      });
 
       const tokenData = await tokenResponse.json();
 
