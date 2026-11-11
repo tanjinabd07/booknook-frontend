@@ -36,11 +36,13 @@ function BookCover({ book }) {
   return (
     <div className="flex h-52 items-center justify-center overflow-hidden bg-emerald-50">
       {imageUrl && !imageError ? (
-        <imge
+                // eslint-disable-next-line @next/next/no-img-element
+        <img
           src={imageUrl}
           alt={book.title || "Book cover"}
+          referrerPolicy="no-referrer"
           onError={() => setImageError(true)}
-          className=" w-full m-auto object-fit-cover"
+          className="h-full w-full object-cover"
         />
       ) : (
         <BookOpen size={64} className="text-emerald-300" />
